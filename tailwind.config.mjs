@@ -15,9 +15,6 @@ function addVariablesForColors({ addBase, theme }) {
 }
 
 export default {
-  images: {
-    formats: ["image/avif", "image/webp", "image/png", "image/jpeg", "image/jpg", "image/svg+xml", "image/gif", "image/tiff"],
-  },
   darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",

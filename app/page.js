@@ -36,11 +36,11 @@ export default function Home() {
       <div className="relative w-full h-auto">
         <LavaLamp />
         <div className="relative z-10 flex flex-col-reverse md:flex-row items-center justify-around bg-gradient-to-b from-[#2e294ea3] to-[#1a172c] gap-4 min-h-[500px] md:min-h-[1200px] text-white text-center px-12 py-[200px] md:mt-[-200px]">
-          <div className="md:w-[40%]">
-          <h1 className="text-3xl text-left md:text-5xl title transform scale-y-110 uppercase font-extrabold tracking-widest text-white py-4">
+          <div className="md:w-[60%]">
+          <h1 className="text-3xl text-left lg:text-6xl title transform scale-y-150 uppercase font-extrabold tracking-widest bg-gradient-to-b from-[#53cbe6] to-[#fff] bg-clip-text text-transparent py-4">
             Smart Solutions for a Digital Future
           </h1>
-          <p className="text-xl text-left mt-4">
+          <p className="text-xl lg:text-2xl text-left mt-8">
             Custom software development and IT strategies designed to drive your
             business forward.
           </p>

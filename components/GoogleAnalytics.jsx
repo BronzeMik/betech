@@ -4,10 +4,9 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 
-const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID; // ✅ Load GA ID from env
-
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID; 
 const GoogleAnalytics = () => {
-  const pathname = usePathname(); // ✅ Get current page path
+  const pathname = usePathname();
 
   useEffect(() => {
     if (GA_TRACKING_ID) {
@@ -15,9 +14,11 @@ const GoogleAnalytics = () => {
         page_path: pathname,
       });
     }
-  }, [pathname]); // ✅ Run whenever the route changes
+  }, [pathname]);
 
-  if (!GA_TRACKING_ID) return null; // ✅ Prevent errors if GA ID is missing
+  if (!GA_TRACKING_ID) return null; 
+
+  console.log("📊 Google Analytics ID:", GA_TRACKING_ID); // ✅ Log GA ID for debugging
 
   return (
     <>

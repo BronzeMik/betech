@@ -4,10 +4,8 @@ import { cn } from "@/lib/utils";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import React from "react";
 import { Card } from "primereact/card";
-import { motion } from "framer-motion";
-import { Bot, Brain, Clock, CloudCog, Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { Bot, Brain, Clock, CloudCog, Mail, Phone } from "lucide-react";
 import AboutLavaLamp from "@/components/AboutLavaLamp";
-import MissionVision from "@/components/MissionVision";
 import Image from "next/image";
 
 const AboutUs = () => {
@@ -31,11 +29,11 @@ const AboutUs = () => {
       <AboutLavaLamp />
       <div className="container mx-auto mt-[-200px] flex flex-col md:flex-row items-center justify-center">
         <Image
-          src="/laptop.svg"
+          src="/laptop.webp"
           alt="Team Photo"
           width={600}
           height={200}
-          className="relative z-50 mb-[-150px] md:mb-20 md:mr-[-150px]" // Reduce negative margin
+          className="relative z-50 mb-[-150px] md:mb-20 md:mr-[-150px]" 
           priority
           loading="eager"
         />
@@ -54,18 +52,18 @@ const AboutUs = () => {
       </div>
 
 
-      <div className="flex flex-col justify-center items-center gap-4 mt-28 mb-40 h-[500px] px-36">
+      <div className="flex flex-col justify-center items-center gap-4 my-56 px-5 md:mt-28 md:mb-40 h-[500px] md:px-36">
         
         <Image
         width={400}
         height={400}
-        src="about-us-how-we-work.svg"
+        src="/about-us-how-we-work.webp"
         alt="ai graphic"
         priority
         loading="eager"
         />
-        <h2 className="text-8xl uppercase font-bold">How We Work</h2>
-        <p className="text-lg text-center md:w-[70%]">At BeTech, we leverage the power of AI-driven automation to streamline workflows, enhance efficiency, and create smarter, data-driven solutions for businesses. Our approach focuses on integrating artificial intelligence, machine learning, and automation into web development and business processes to reduce manual effort, improve decision-making, and drive growth.</p>
+        <h2 className="text-4xl md:text-8xl uppercase font-bold">How We Work</h2>
+        <p className="md:text-lg text-center md:w-[70%]">At BeTech, we leverage the power of AI-driven automation to streamline workflows, enhance efficiency, and create smarter, data-driven solutions for businesses. Our approach focuses on integrating artificial intelligence, machine learning, and automation into web development and business processes to reduce manual effort, improve decision-making, and drive growth.</p>
         <a className="bg-[#21FA90] px-8 font-bold py-4 text-black cursor-pointer hover:bg-[#46b17e] rounded-lg">Learn More</a>
       </div>
 
@@ -180,7 +178,7 @@ const AboutUs = () => {
                 <Image
                 width={100}
                 height={100}
-                src={"/about-us-img-1.svg"}
+                src={"/about-us-img-1.webp"}
                 alt="about us"
                 className="rounded-xl"
                 priority
@@ -202,7 +200,7 @@ const AboutUs = () => {
                 <Image
                 width={100}
                 height={100}
-                src={"/about-us-img-1(1).svg"}
+                src={"/about-us-img-1_1_.webp"}
                 alt="about us"
                 className="rounded-xl"
                 priority
@@ -223,7 +221,7 @@ const AboutUs = () => {
                 <Image
                 width={100}
                 height={100}
-                src={"/about-us-img-1(2).svg"}
+                src={"/about-us-img-1_2_.webp"}
                 alt="about us"
                 className="rounded-xl"
                 priority
@@ -248,7 +246,7 @@ const AboutUs = () => {
             <Image
             width={500}
             height={500}
-            src="about-us-img-1(3).svg"
+            src="/about-us-img-1_3_.webp"
             alt="ai robot"
             className=""
             priority

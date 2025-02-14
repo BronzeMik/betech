@@ -1,55 +1,72 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { ChevronRight } from "lucide-react";
 
+const blogPosts = [
+  {
+    id: 1,
+    title: "The Future of Cloud Computing in 2024",
+    excerpt: "Discover how cloud computing is evolving in 2024 and what businesses need to prepare for.",
+    date: "2024-02-12",
+    slug: "cloud-computing-2024",
+  },
+  {
+    id: 2,
+    title: "Cybersecurity Best Practices for Business Owners",
+    excerpt: "Learn how to protect your business from cyber threats with these essential security practices.",
+    date: "2024-02-10",
+    slug: "cybersecurity-business-practices",
+  },
+  {
+    id: 3,
+    title: "How Digital Marketing is Changing in 2024",
+    excerpt: "Stay ahead of the competition by adapting to the latest digital marketing trends this year.",
+    date: "2024-02-08",
+    slug: "digital-marketing-trends-2024",
+  },
+  {
+    id: 4,
+    title: "Optimizing IT Support for Maximum Efficiency",
+    excerpt: "Find out how to streamline IT support to boost productivity and reduce downtime in your business.",
+    date: "2024-02-05",
+    slug: "it-support-efficiency",
+  },
+  {
+    id: 5,
+    title: "Web Development Strategies for Business Growth",
+    excerpt: "Explore the latest web development techniques that can drive growth and customer engagement.",
+    date: "2024-02-03",
+    slug: "web-development-strategies",
+  },
+];
+
 const CTASection = () => {
-  const [blogPosts, setBlogPosts] = useState([]);
-
-  useEffect(() => {
-    async function fetchBlogPosts() {
-      try {
-        const response = await fetch("/api/blogs"); // ✅ Fetch from new API route
-        const data = await response.json();
-        setBlogPosts(data.slice(0, 5)); // ✅ Limit to latest 5 posts
-      } catch (error) {
-        console.error("🚨 Error fetching blog posts:", error);
-      }
-    }
-
-    fetchBlogPosts();
-  }, []);
-
   return (
     <section className="w-full bg-[#141122] text-white py-16 px-6">
       <div className="container mx-auto flex flex-col md:flex-row items-start gap-12">
         
         {/* Blog Cards Section */}
         <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogPosts.length > 0 ? (
-            blogPosts.map((post) => (
-              <Link
-                key={post.id}
-                href={`/blogs/${post.slug}`}
-                className="relative group block p-6 bg-[#1a172b] rounded-lg border border-[#2e294e] hover:border-[#21FA90] hover:scale-105 transition-all duration-300"
-              >
-                <h4 className="text-xl font-semibold group-hover:text-[#21FA90]">{post.title}</h4>
-                <p className="text-gray-400 mt-2">{post.excerpt}</p>
-                <span className="mt-4 flex items-center text-sm text-gray-300 group-hover:text-[#21FA90] transition-all duration-300">
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}{" "}
-                  <ChevronRight className="ml-1 w-4 h-4" />
-                </span>
-                {/* Glow Effect */}
-                <span className="absolute inset-0 scale-75 opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 bg-[#21fa9148] blur-3xl rounded-lg"></span>
-              </Link>
-            ))
-          ) : (
-            <p className="text-gray-400">Loading blog posts...</p>
-          )}
+          {blogPosts.map((post) => (
+            <Link
+              key={post.id}
+              href={`/blogs/${post.slug}`}
+              className="relative group block p-6 bg-[#1a172b] rounded-lg border border-[#2e294e] hover:border-[#21FA90] hover:scale-105 transition-all duration-300"
+            >
+              <h4 className="text-xl font-semibold group-hover:text-[#21FA90]">{post.title}</h4>
+              <p className="text-gray-400 mt-2">{post.excerpt}</p>
+              <span className="mt-4 flex items-center text-sm text-gray-300 group-hover:text-[#21FA90] transition-all duration-300">
+                {new Date(post.date).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}{" "}
+                <ChevronRight className="ml-1 w-4 h-4" />
+              </span>
+              {/* Glow Effect */}
+              <span className="absolute inset-0 scale-75 opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 bg-[#21fa9148] blur-3xl rounded-lg"></span>
+            </Link>
+          ))}
         </div>
 
         {/* CTA Content Section */}

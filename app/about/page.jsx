@@ -36,6 +36,8 @@ const AboutUs = () => {
           width={600}
           height={200}
           className="relative z-50 mb-[-150px] md:mb-20 md:mr-[-150px]" // Reduce negative margin
+          priority
+          loading="eager"
         />
         <div className="relative z-40 bg-[#1a172b] shadow-lg shadow-[#21FA90] max-w-3xl text-center mb-12 py-24 px-12 md:pl-36 md:pr-12">
           {/* Balanced padding */}
@@ -59,6 +61,8 @@ const AboutUs = () => {
         height={400}
         src="about-us-how-we-work.svg"
         alt="ai graphic"
+        priority
+        loading="eager"
         />
         <h2 className="text-8xl uppercase font-bold">How We Work</h2>
         <p className="text-lg text-center md:w-[70%]">At BeTech, we leverage the power of AI-driven automation to streamline workflows, enhance efficiency, and create smarter, data-driven solutions for businesses. Our approach focuses on integrating artificial intelligence, machine learning, and automation into web development and business processes to reduce manual effort, improve decision-making, and drive growth.</p>
@@ -179,6 +183,8 @@ const AboutUs = () => {
                 src={"/about-us-img-1.svg"}
                 alt="about us"
                 className="rounded-xl"
+                priority
+                loading="eager"
                 />
               </div>
 
@@ -199,6 +205,8 @@ const AboutUs = () => {
                 src={"/about-us-img-1(1).svg"}
                 alt="about us"
                 className="rounded-xl"
+                priority
+                loading="eager"
                 />
               </div>
 
@@ -218,6 +226,8 @@ const AboutUs = () => {
                 src={"/about-us-img-1(2).svg"}
                 alt="about us"
                 className="rounded-xl"
+                priority
+                loading="eager"
                 />
               </div>
 
@@ -241,6 +251,8 @@ const AboutUs = () => {
             src="about-us-img-1(3).svg"
             alt="ai robot"
             className=""
+            priority
+            loading="eager"
             />
           </div>
           <div className=" flex flex-col justify-center">

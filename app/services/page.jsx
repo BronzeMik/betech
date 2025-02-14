@@ -28,6 +28,8 @@ const Services = () => {
             height={300}
             alt="robot"
             src='/services_page_img_transparent.gif'
+            priority
+            loading="eager"
             />
         </div>
        

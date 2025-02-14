@@ -4,6 +4,7 @@ import MainNavBar from "@/components/MainNavBar";
 import Footer from "@/components/Footer";
 import ContactUs from "@/components/ContactUs";
 import CTASection from "@/components/CTASection";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Analytics />
         <header>
           <div
             className={`fixed left-0 w-full flex justify-between px-8 top-0 bg-[#141122] bg-opacity-95 shadow-md z-[100]`}

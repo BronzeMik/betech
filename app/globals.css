@@ -1,21 +1,249 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Tailwind Base Styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Global Font Settings */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
+/* ========== Base Styles ========== */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  /* Dark Mode */
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+
+  /* Apply Global Styling */
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-y: scroll;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .shadow-inner-blur {
+    box-shadow: inset 0 20px 150px rgba(46, 41, 78, 1);
+  }
+}
+
+
+/* ========== Custom Components ========== */
+@layer components {
+  /* Ensuring `border-border` is properly defined */
+  .border-border {
+    border-color: var(--border);
+  }
+
+  .title {
+    font-family: "Anton", sans-serif;
+    letter-spacing: 0.3em;
+  }
+}
+
+/* ========== Lava Lamp Blob Animations ========== */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Lava Lamp Blob Styles */
+.lava-lamp {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 60% 40% 70% 30% / 50% 50% 70% 50%;
+  will-change: border-radius, transform;
+  filter: blur(40px);
+  opacity: 0.9;
+  z-index: 10;
+  background: radial-gradient(circle, var(--color1), var(--color2), var(--color3));
+  animation: colorShift 5s infinite alternate;
+}
+
+@keyframes colorShift {
+  0% {
+    --color1: #2e294e;
+    --color2: #ff5376;
+    --color3: #21fa90;
+  }
+  50% {
+    --color1: #ff5376;
+    --color2: #21fa90;
+    --color3: #2e294e;
+  }
+  100% {
+    --color1: #21fa90;
+    --color2: #2e294e;
+    --color3: #ff5376;
+  }
+}
+
+/* Unique Blob Animations */
+.lava-lamp.one {
+  background: linear-gradient(45deg, #2e294e, #5000da);
+  animation: morph1 10s infinite ease-in-out alternate;
+}
+.lava-lamp.two {
+  background: linear-gradient(45deg, #5000da, #21fa90);
+  animation: morph2 12s infinite ease-in-out alternate;
+}
+.lava-lamp.three {
+  background: linear-gradient(45deg, #2e294e, #21fa90);
+  animation: morph3 14s infinite ease-in-out alternate;
+}
+
+/* Blob Keyframes */
+@keyframes morph1 {
+  0%, 100% {
+    border-radius: 60% 40% 70% 30% / 50% 50% 70% 50%;
+    transform: translate(0, 0);
+  }
+  33% {
+    border-radius: 50% 50% 50% 50% / 40% 60% 50% 50%;
+    transform: translate(80px, 60px);
+  }
+  66% {
+    border-radius: 70% 30% 50% 50% / 60% 40% 50% 50%;
+    transform: translate(-60px, -80px);
+  }
+}
+
+@keyframes morph2 {
+  0%, 100% {
+    border-radius: 50% 50% 60% 40% / 60% 40% 50% 50%;
+    transform: translate(0, 0);
+  }
+  33% {
+    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform: translate(-70px, 40px);
+  }
+  66% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate(50px, -50px);
+  }
+}
+
+@keyframes morph3 {
+  0%, 100% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: translate(0, 0);
+  }
+  33% {
+    border-radius: 60% 40% 70% 30% / 50% 50% 70% 50%;
+    transform: translate(90px, -30px);
+  }
+  66% {
+    border-radius: 40% 60% 50% 50% / 70% 30% 50% 50%;
+    transform: translate(-80px, 70px);
+  }
+}
+
+
+/* --------- About Us --------------- */
+.about-lava-lamp-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.about-lava-lamp {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.about-lava-lamp-2 {
+  position: absolute;
+  width: 100%;
+  height: 800px;
+  opacity: 0.5;
+  z-index: 50;
+}
+
+
+.vertical-line {
+  width: 5px; /* Adjust the width of the line */
+  height: 100px; 
+  background-color: #0027EC; /* Initial color */
+  animation: colorChange 5s linear infinite; /* Animation properties */
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #0027EC;
+  }
+  33% {
+    background-color: #21FA90;
+  }
+  66% {
+    background-color: #02A9EA;
+  }
+  100% {
+    background-color: #0027EC;
+  }
 }

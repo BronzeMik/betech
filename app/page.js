@@ -115,7 +115,7 @@ export default function Home() {
           </div>
           <div className="hidden md:block md:mt-[-200px]">
             <Image
-              src={"/laptop-security.svg"}
+              src={"/laptop-security.webp"}
               width={800}
               height={800}
               alt="Laptop Image"

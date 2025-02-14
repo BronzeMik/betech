@@ -15,7 +15,7 @@ const AboutUs = () => {
         <p className="z-10 whitespace-pre-wrap text-center text-5xl font-bold tracking-wider uppercase">
           About <span className="text-[#21FA90]">BeTech Solutions</span>
         </p>
-        <AnimatedGridPattern
+        {/* <AnimatedGridPattern
           numSquares={20}
           maxOpacity={0.1}
           duration={0.3}
@@ -24,7 +24,7 @@ const AboutUs = () => {
             "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
             "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
           )}
-        />
+        /> */}
       </div>
       <AboutLavaLamp />
       <div className="container mx-auto mt-[-200px] flex flex-col md:flex-row items-center justify-center">

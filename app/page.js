@@ -185,7 +185,7 @@ export default function Home() {
         <div className="h-[300px] px-4 md:px-0 text-center mt-9 relative w-full overflow-hidden bg-gradient-to-b from-[#060608] to-[#000] flex flex-col items-center justify-center rounded-lg">
           <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-[#060608] to-[#000] z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
-          <BoxesCore />
+          {/* <BoxesCore /> */}
           <h1
             className={cn(
               "md:text-5xl text-3xl tracking-wider md:tracking-normal uppercase text-center text-white relative z-20"

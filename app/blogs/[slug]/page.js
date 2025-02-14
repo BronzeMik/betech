@@ -2,6 +2,7 @@ import RelatedBlogCard from "@/components/RelatedBlogCard";
 import { getBlogPost, getRelatedPosts, getBlogPosts } from "@/lib/notion";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
+import SEO from "@/components/SEO";
 
 export default async function BlogPost({ params }) {
   const slug = (await params)?.slug;
@@ -36,6 +37,14 @@ export default async function BlogPost({ params }) {
 
 
   return (
+    <>
+    <SEO
+        title={`${post.title} | BeTech Solutions`}
+        description={post.excerpt}
+        url={`https://betechsolutions.com/blogs/${slug}`}
+        image={post.cover}
+        publishedTime={post.date}
+      />
     <div className="container mx-auto mt-36 px-4 py-10">
       {/* Post Header */}
       <div className="w-full flex flex-col items-center text-center">
@@ -65,5 +74,6 @@ export default async function BlogPost({ params }) {
         </div>}
       </div>
     </div>
+    </>
   );
 }

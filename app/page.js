@@ -76,6 +76,8 @@ export default function Home() {
               width={300}
               height={100}
               className="w-full max-w-[400px] h-auto"
+              priority
+              loading="eager"
             />
           </div>
         </div>
@@ -87,6 +89,8 @@ export default function Home() {
               height={800}
               alt="Laptop Image"
               className="relative z-[60] w-[100%] h-auto"
+              priority 
+              loading="eager"
             />
           </div>
           <div className="relative bg-slate-50 px-6 py-14 rounded-lg mt-[-150px] md:mt-0">
@@ -139,6 +143,8 @@ export default function Home() {
               height={800}
               alt="Laptop Image"
               className="w-[100%] h-auto"
+              priority 
+              loading="eager"
             />
           </div>
         </div>

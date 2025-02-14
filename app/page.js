@@ -1,11 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import LavaLamp from "@/components/LavaLamp";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { PulsatingButton } from "@/components/ui/pulsating-button";
-import { MagicCard } from "@/components/ui/magic-card";
-import { BoxReveal } from "@/components/ui/box-reveal";
 import { Card } from "primereact/card";
 import {
   BrainCircuit,
@@ -15,16 +12,13 @@ import {
   Code,
   BarChart3,
 } from "lucide-react";
-import MainNavBar from "@/components/MainNavBar";
+
 
 import { BoxesCore } from "@/components/BoxesCore";
 import { cn } from "@/lib/utils";
-import CTASection from "@/components/CTASection";
-import ContactUs from "@/components/ContactUs";
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  
   
 
   const handleSubmit = (e) => {
@@ -41,7 +35,7 @@ export default function Home() {
       
       <div className="relative w-full h-auto">
         <LavaLamp />
-        <div className="relative z-10 flex flex-col-reverse md:flex-row items-center justify-around bg-gradient-to-b from-[#2e294ea3] to-[#1a172c] gap-4 min-h-[1200px] md:min-h-[1200px] text-white text-center px-12 mt-[-200px]">
+        <div className="relative z-10 flex flex-col-reverse md:flex-row items-center justify-around bg-gradient-to-b from-[#2e294ea3] to-[#1a172c] gap-4 min-h-[500px] md:min-h-[1200px] text-white text-center px-12 py-[200px] md:mt-[-200px]">
           <div className="md:w-[40%]">
           <h1 className="text-3xl text-left md:text-5xl title transform scale-y-110 uppercase font-extrabold tracking-widest text-white py-4">
             Smart Solutions for a Digital Future
@@ -50,24 +44,6 @@ export default function Home() {
             Custom software development and IT strategies designed to drive your
             business forward.
           </p>
-          <form
-            className="cta-form w-full flex justify-start mt-10"
-            onSubmit={handleSubmit}
-          >
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="cta-input px-3 md:px-12 mr[-5px] md:mr-[-10px] text-black rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <PulsatingButton className="px-2 md:px-10 md:py-4 bg-primary">
-              Get Free E-book
-            </PulsatingButton>
-          </form>
-
-          {message && <p className="cta-message">{message}</p>}
           </div>
           <div>
             <Image
@@ -78,13 +54,14 @@ export default function Home() {
               className="w-full max-w-[400px] h-auto"
               priority
               loading="eager"
+              unoptimized
             />
           </div>
         </div>
         <div className="relative grid grid-cols-1 md:grid-cols-2 w-screen px-4 md:px-20 items-center justify-center overflow-hidden pt-8 z-50 md:mt-[-200px]">
           <div className="md:hidden mt-[-100px]">
             <Image
-              src={"/laptop-security.svg"}
+              src={"/laptop-security.webp"}
               width={800}
               height={800}
               alt="Laptop Image"
@@ -94,20 +71,20 @@ export default function Home() {
             />
           </div>
           <div className="relative bg-slate-50 px-6 py-14 rounded-lg mt-[-150px] md:mt-0">
-            <BoxReveal boxColor={"#21FA90"} duration={0.5}>
+           
               <p className="text-[3.5rem] font-semibold">
                 Full Suite IT Services<span className="text-[#2E294E]">.</span>
               </p>
-            </BoxReveal>
+            
 
-            <BoxReveal boxColor={"#21FA90"} duration={0.5}>
+            
               <h2 className="mt-[.5rem] text-[1rem]">
                 Save Time and Money With{" "}
                 <span className="text-[#2E294E]">BeTech Solutions</span>
               </h2>
-            </BoxReveal>
+            
 
-            <BoxReveal boxColor={"#21FA90"} duration={0.5}>
+            
               <div className="mt-6">
                 <p>
                   -&gt; Be confident in outsourcing your IT requirements including
@@ -130,11 +107,11 @@ export default function Home() {
                   -&gt; 100% satisfaction guarantee, and tailored to your needs. <br />
                 </p>
               </div>
-            </BoxReveal>
+            
 
-            <BoxReveal boxColor={"#21FA90"} duration={0.5}>
+            
               <a href="/contact"><Button className="mt-[1.6rem] bg-[#2E294E]">Contact Us</Button></a>
-            </BoxReveal>
+            
           </div>
           <div className="hidden md:block md:mt-[-200px]">
             <Image

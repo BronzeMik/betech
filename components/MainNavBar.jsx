@@ -12,7 +12,8 @@ const MainNavBar = () => {
       <div className="flex justify-between items-center">
         {/* Brand Logo */}
         <Link href="/">
-          <Image src="/logo.svg" width={150} height={75} alt="Company Logo" />
+          <Image src="/logo.svg" width={150} height={75} alt="Company Logo"  priority
+              loading="eager"/>
         </Link>
 
         {/* Desktop Navigation */}

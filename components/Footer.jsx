@@ -15,7 +15,8 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         {/* Brand Logo */}
         <div className="mb-6 md:mb-0">
-          <Image src="/logo.svg" width={200} height={100} alt="Company Logo" />
+          <Image src="/logo.svg" width={200} height={100} alt="Company Logo" priority
+              loading="eager" />
         </div>
 
         {/* Mobile Toggle for Links */}

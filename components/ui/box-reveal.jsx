@@ -1,49 +1,52 @@
-"use client";;
-import { motion, useAnimation, useInView } from "motion/react";
-import { useEffect, useRef } from "react";
+"use client";
+import { motion, useAnimation } from "framer-motion"; // ✅ Correct import
+import { useEffect, useRef, useState, useMemo } from "react";
+import { useInView } from "react-intersection-observer";
 
-export const BoxReveal = ({
-  children,
-  width = "fit-content",
-  boxColor = "#5046e6",
-  duration
-}) => {
+export const BoxReveal = ({ children, width = "fit-content", boxColor = "#5046e6", duration = 0.5 }) => {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
+  const [hasAnimated, setHasAnimated] = useState(false); // ✅ Prevent re-animation
 
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const { ref, inView } = useInView({ triggerOnce: true }); // ✅ More efficient observer
 
   useEffect(() => {
-    if (isInView) {
+    if (inView && !hasAnimated) {
       slideControls.start("visible");
       mainControls.start("visible");
-    } else {
-      slideControls.start("hidden");
-      mainControls.start("hidden");
+      setHasAnimated(true);
     }
-  }, [isInView, mainControls, slideControls]);
+  }, [inView, hasAnimated, mainControls, slideControls]);
+
+  // ✅ Use `useMemo` for static animation variants
+  const motionVariants = useMemo(() => ({
+    hidden: { opacity: 0, y: 75 },
+    visible: { opacity: 1, y: 0 },
+  }), []);
+
+  const slideVariants = useMemo(() => ({
+    hidden: { left: 0 },
+    visible: { left: "100%" },
+  }), []);
 
   return (
-    (<div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div ref={ref} style={{ position: "relative", width, clipPath: "inset(0)" }}>
+      {/* ✅ Optimized Main Animation */}
       <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 },
-        }}
+        variants={motionVariants}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: duration ? duration : 0.5, delay: 0.25 }}>
+        transition={{ duration, delay: 0.25 }}
+      >
         {children}
       </motion.div>
+
+      {/* ✅ Optimized Slide Animation */}
       <motion.div
-        variants={{
-          hidden: { left: 0 },
-          visible: { left: "100%" },
-        }}
+        variants={slideVariants}
         initial="hidden"
         animate={slideControls}
-        transition={{ duration: duration ? duration : 0.5, ease: "easeIn" }}
+        transition={{ duration, ease: "easeIn" }}
         style={{
           position: "absolute",
           top: 4,
@@ -52,7 +55,8 @@ export const BoxReveal = ({
           right: 0,
           zIndex: 20,
           background: boxColor,
-        }} />
-    </div>)
+        }}
+      />
+    </div>
   );
 };

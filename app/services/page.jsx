@@ -14,7 +14,7 @@ const Services = () => {
       <div className="relative z-10 flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
         <div className="flex flex-col-reverse md:flex-row w-[50%] items-center justify-center">
             <div>
-            <p className="z-20 whitespace-pre-wrap uppercase text-left text-5xl font-bold tracking-wider text-[#21FA90]">
+            <p className="z-20 whitespace-pre-wrap uppercase text-left text-3xl md:text-5xl font-bold tracking-wider text-[#21FA90]">
             Comprehensive Services
             </p>
             <p className="text-white py-4 text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora blanditiis ab nostrum, velit quisquam libero voluptatem quae? Debitis eum praesentium maxime velit.</p>

@@ -7,11 +7,11 @@ const Contact = () => {
   return (
     <div>
       <div className="bg-[#141122] flex flex-col justify-center gap-6 px-6">
-        <div className="flex flex-col text-white justify-center items-center pt-32 mx-auto w-[60%]">
-          <h2 className="text-white text-3xl md:text-6xl uppercase tracking-wider font-bold text-center">
+        <div className="flex flex-col text-white justify-center items-center pt-32 mx-auto w-[90%] md:w-[60%]">
+          <h2 className="text-[#21FA90] text-3xl md:text-6xl uppercase tracking-wider font-bold text-left md:text-center">
             Get In Touch With BeTech
           </h2>
-          <p className="text-justify py-6">
+          <p className="text-left md:text-justify py-6">
             Have questions or need assistance? We're here to help! Whether
             you're looking for IT solutions, cloud management, cybersecurity, or
             software development, our team at BeTech is ready to assist you.
@@ -20,7 +20,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <section className="w-full bg-[#141122] text-white py-16 px-6">
+        <section className="w-full bg-[#141122] text-white py-16 px-2 md:px-6">
           <div className="container mx-auto flex flex-col md:flex-row items-start gap-12">
             {/* Contact Information Section */}
             <div className="w-full md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left">

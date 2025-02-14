@@ -50,7 +50,7 @@ const MainNavBar = () => {
       {/* Mobile Navigation Menu */}
       {isOpen && (
         <div className="md:hidden flex flex-col gap-4 mt-4 bg-[#1a172b] py-4 px-6 rounded-lg">
-          {["Home", "About", "Services", "Portfolio", "Blog", "Contact"].map(
+          {["Home", "About", "Services", "Portfolio", "Blogs", "Contact"].map(
             (item, index) => (
               <Link
                 key={index}

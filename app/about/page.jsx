@@ -37,7 +37,7 @@ const AboutUs = () => {
           priority
           loading="eager"
         />
-        <div className="relative z-40 bg-[#1a172b] shadow-lg shadow-[#21FA90] max-w-3xl text-center mb-12 py-24 px-12 md:pl-36 md:pr-12">
+        <div className="relative z-40 bg-[#1a172b] shadow-lg shadow-[#21FA90] mx-4 md:mx-0 md:max-w-3xl text-center mb-12 py-24 md:px-12 md:pl-36 md:pr-12">
           {/* Balanced padding */}
           <h2 className="text-slate-50 text-3xl md:text-5xl uppercase mb-6">
             Who We Are
@@ -262,7 +262,7 @@ const AboutUs = () => {
         </div>
 
 
-        <div className="flex flex-col md:flex-row md:justify-center gap-6 px-16 mt-[-100px]">
+        <div className="flex flex-col md:flex-row md:justify-center gap-6 px-16 md:mt-[-100px]">
           <div className="bg-[#1a172b] border-[#2e294e] shadow-lg shadow-[#2e294e] h-[200px] md:w-[30%] rounded-lg flex flex-col items-center justify-center gap-4">
             <h2 className="flex justify-center items-center text-3xl gap-4 w-full"><Phone className="text-8xl" /> Call Us</h2>
             <p>216-465-5346</p>

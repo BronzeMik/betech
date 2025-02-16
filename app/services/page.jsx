@@ -17,7 +17,7 @@ const Services = () => {
             <p className="z-20 whitespace-pre-wrap uppercase text-left text-3xl md:text-5xl font-bold tracking-wider text-[#21FA90]">
             Comprehensive Services
             </p>
-            <p className="text-white py-4 text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora blanditiis ab nostrum, velit quisquam libero voluptatem quae? Debitis eum praesentium maxime velit.</p>
+            <p className="text-white py-4 text-left">Our expert consulting and smart tools empower you to make data-driven decisions, optimize processes, and ensure long-term success. Let us help you unlock your startup&apos;s full potential.</p>
             <div className="flex gap-2">
                 <a className="bg-[#21FA90] px-4 py-2 uppercase cursor-pointer">Learn More</a>
                 <a className="bg-white px-4 py-2 uppercase cursor-pointer">Contact Us</a>

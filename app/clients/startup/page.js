@@ -54,7 +54,7 @@ const StartUpLandingPage = () => {
                 </button></a>
               </div>
             </motion.div>
-            <motion.div
+            <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -108,7 +108,7 @@ const StartUpLandingPage = () => {
         </div>
       </section>
 
-      {/* ROI Calculator Section */}
+      {/* AI Powered IT Roadmap */}
       <section className="section-padding">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8 items-center">

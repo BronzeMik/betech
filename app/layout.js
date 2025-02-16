@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         <SpeedInsights />
         <header>
           <div
-            className={`fixed left-0 w-full flex justify-between px-8 top-0 bg-[#141122] bg-opacity-95 shadow-md z-[100]`}
+            className={`fixed left-0 w-full flex justify-between top-0 bg-[#141122] bg-opacity-95 shadow-md z-[100]`}
           >
             <MainNavBar />
           </div>

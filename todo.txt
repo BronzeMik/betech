@@ -1,0 +1,3 @@
+validate email on forms
+fix loading screen and loading on submit btns
+ensure responsiveness

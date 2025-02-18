@@ -49,7 +49,7 @@ export default async function BlogPost({ params }) {
       {/* Post Header */}
       <div className="w-full flex flex-col items-center text-center">
         <Image
-          src={post.cover}
+          src={post.path}
           alt={post.title}
           width={500}
           height={500}

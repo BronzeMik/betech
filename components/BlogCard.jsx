@@ -7,7 +7,7 @@ const BlogCard = ({ post }) => {
       className="bg-white rounded-xl shadow-lg p-4 hover:shadow-xl transition-shadow"
     >
       <img
-        src={post.cover}
+        src={post.path}
         alt={post.title}
         className="w-full h-52 object-cover rounded-md"
       />

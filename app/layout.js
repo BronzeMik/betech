@@ -7,6 +7,8 @@ import CTASection from "@/components/CTASection";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import "@radix-ui/themes/styles.css";
+import { Theme } from "@radix-ui/themes";
 
 
 const geistSans = Geist({
@@ -33,6 +35,7 @@ export default function RootLayout({ children }) {
         <GoogleAnalytics />
         <Analytics />
         <SpeedInsights />
+        <Theme>
         <header>
           <div
             className={`fixed left-0 w-full flex justify-between top-0 bg-[#141122] bg-opacity-95 shadow-md z-[100]`}
@@ -48,6 +51,7 @@ export default function RootLayout({ children }) {
           <ContactUs />
         </div>
         <Footer />
+        </Theme>
       </body>
     </html>
   );

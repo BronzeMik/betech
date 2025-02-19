@@ -42,11 +42,11 @@ const AIPoweredITGenerator = () => {
   });
 
   const searchParams = useSearchParams();
+  const verificationToken = searchParams.get("verification");
   const router = useRouter();
 
   useEffect(() => {
     const verifyUser = async () => {
-      const verificationToken = searchParams.get("verification");
 
       if (!verificationToken) {
         console.log("No verification token provided");

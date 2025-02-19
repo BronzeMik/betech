@@ -21,6 +21,7 @@ import axios from "axios";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Suspense } from "react";
 
+
 const AIPoweredITGenerator = () => {
   const emailRef = useRef(null);
   const [emailSent, setEmailSent] = useState(false);
@@ -234,6 +235,9 @@ const AIPoweredITGenerator = () => {
               } md:block md:w-1/4 bg-[#3fa885]`}
             >
               <h2 className="text-[#fefefe] text-left font-semibold text-lg">Form Sections</h2>
+              <Suspense>
+                <p className="text-[#3fa885]">{searchParams}</p>
+              </Suspense>
               <button
                 className="block md:hidden bg-white text-green-600 px-2 py-1 mt-2 rounded"
                 onClick={() => setIsOpen(false)}

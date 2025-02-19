@@ -197,7 +197,7 @@ export default function ITRoadmapForm({steps, step, setStep, formData, setFormDa
           {!roadmap ? (<Button className="bg-[#3fa885] w-fit text-[#141122] hover:text-white" onClick={handleSubmit}>
             {/* Submit */}
             {loading ? (
-              <div className="flex items-center justify-center gap-3" disabled={loading}><p>Generating IT Roadmap. Please wait this could take up to 2 minutes.</p><span className="loader w-[20px] h-[20px]"></span></div>
+              <div className="flex items-center justify-center gap-3" disabled={loading}><p>Please wait this could take up to 2 minutes.</p><span className="loader w-[20px] h-[20px]"></span></div>
             ) : (
               <span>Generate IT Roadmap</span>
             )}

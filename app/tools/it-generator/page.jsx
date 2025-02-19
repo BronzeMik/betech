@@ -19,6 +19,7 @@ import { isVerified } from "@/lib/utils";
 import ITRoadmapForm from "@/components/ITRoadmapForm";
 import axios from "axios";
 import { useSearchParams, useRouter } from "next/navigation";
+import { Suspense } from "react";
 
 const AIPoweredITGenerator = () => {
   const emailRef = useRef(null);
@@ -222,7 +223,7 @@ const AIPoweredITGenerator = () => {
   ];
 
   return (
-    <>
+    <Suspense>
       {emailVerified ? (
         <div className="flex flex-col justify-center items-center text-center px-4 py-32 bg-[#fefefe]">
           <div className="flex flex-col md:flex-row w-full">
@@ -513,7 +514,7 @@ const AIPoweredITGenerator = () => {
           </section>
         </div>
       )}
-    </>
+    </Suspense>
   );
 };
 

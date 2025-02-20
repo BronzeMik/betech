@@ -269,6 +269,7 @@ const AIPoweredITGenerator = () => {
               >
                 Open Sidebar
               </button>
+              <Suspense>
               <ITRoadmapForm
               step={step}
               setStep={setStep}
@@ -277,6 +278,7 @@ const AIPoweredITGenerator = () => {
               setFormData={setFormData}
               searchParams={searchParams}
               />
+              </Suspense>
             </div>
           </div>
         </div>

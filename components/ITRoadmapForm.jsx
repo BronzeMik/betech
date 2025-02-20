@@ -14,7 +14,7 @@ export default function ITRoadmapForm({steps, step, setStep, formData, setFormDa
   
   const [loading, setLoading] = useState(false);
   const [roadmap, setRoadmap] = useState(null);
-  
+  const verificationToken = searchParams.get("verification");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,7 +33,7 @@ export default function ITRoadmapForm({steps, step, setStep, formData, setFormDa
     } 
 
     try {
-        const verificationToken = searchParams.get("verification");
+        
       const response = await axios.post("/api/generate-it-roadmap", { formData, verificationToken });
       if(!response?.data?.roadmap && response?.data?.message === "A lead magnet was already generated in the last 48 hours.") {
         alert("A lead magnet was already generated in the last 48 hours. Please check your email for the link to download it.");
@@ -56,6 +56,9 @@ export default function ITRoadmapForm({steps, step, setStep, formData, setFormDa
   return (
     
     <div className="mx-auto p-6 bg-gray-50/20 border-2 border-gray-100 flex flex-col justify-between rounded-xl shadow-lg w-full md:h-[400px]">
+      <Suspense>
+        <p className="text-gray-50/20">{verificationToken}</p>
+      </Suspense>
       <h2 className="text-2xl font-bold mb-4 text-[#2f2f2f]">{steps[step]}</h2>
       <Progress
         value={(step / (steps.length - 1)) * 100}

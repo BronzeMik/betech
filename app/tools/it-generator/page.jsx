@@ -224,7 +224,7 @@ const AIPoweredITGenerator = () => {
   ];
 
   return (
-    <Suspense>
+    <div>
       {emailVerified ? (
         <div className="flex flex-col justify-center items-center text-center px-4 py-32 bg-[#fefefe]">
           <div className="flex flex-col md:flex-row w-full">
@@ -276,7 +276,7 @@ const AIPoweredITGenerator = () => {
               steps={steps}
               formData={formData}
               setFormData={setFormData}
-              searchParams={searchParams}
+              verificationToken={verificationToken}
               />
               </Suspense>
             </div>
@@ -520,7 +520,7 @@ const AIPoweredITGenerator = () => {
           </section>
         </div>
       )}
-    </Suspense>
+    </div>
   );
 };
 

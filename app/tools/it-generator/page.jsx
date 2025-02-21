@@ -269,7 +269,7 @@ const AIPoweredITGenerator = () => {
               >
                 Open Sidebar
               </button>
-              <Suspense>
+              <Suspense fallback={<div>Loading...</div>}>
               <ITRoadmapForm
               step={step}
               setStep={setStep}

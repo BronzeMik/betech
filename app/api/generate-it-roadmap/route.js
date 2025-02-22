@@ -266,6 +266,7 @@ Example output should look like this:
     console.log(error)
     return NextResponse.json(
       { error: "Error generating roadmap" },
+      { reason: error.message, statusText: "Internal Server Error" },
       { status: 500 }
     );
   }

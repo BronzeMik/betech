@@ -45,6 +45,7 @@ export default function ITRoadmapForm({steps, step, setStep, formData, setFormDa
       setRoadmap(response.data.roadmap);
       console.log(roadmap);
     } catch (error) {
+      alert("An error occurred while generating the roadmap. Please try again later.");
       console.error("Error generating roadmap", error);
     } finally {
       setLoading(false);

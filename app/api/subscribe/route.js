@@ -70,7 +70,7 @@ export async function POST(req) {
         }
 
         // Send Verification Email via Nodemailer
-        const verificationLink = `http://localhost:3000/tools/it-generator?verification=${verificationToken}`;
+        const verificationLink = `http://betechpro.com/tools/it-generator?verification=${verificationToken}`;
         await transporter.sendMail({
           from: process.env.NEXT_PUBLIC_EMAIL_USER,
           to: email,
@@ -113,7 +113,7 @@ export async function POST(req) {
     }
 
     // Send Verification Email via Nodemailer
-    const verificationLink = `http://localhost:3000/tools/it-generator?verification=${verificationToken}`;
+    const verificationLink = `http://betechpro.com/tools/it-generator?verification=${verificationToken}`;
     await transporter.sendMail({
       from: process.env.NEXT_PUBLIC_EMAIL_USER,
       to: email,

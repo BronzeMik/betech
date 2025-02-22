@@ -9,6 +9,11 @@ const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
 });
 
+export const config = {
+  runtime: "edge",
+};
+
+
 export async function POST(req) {
   try {
     const data = await req.text();
@@ -39,7 +44,13 @@ export async function POST(req) {
             const hoursDifference = (now - lastGeneratedTime) / (1000 * 60 * 60);
     
             if (hoursDifference <= 48) {
-                return NextResponse.json({ message: "A lead magnet was already generated in the last 48 hours." });
+              return new Response(
+                JSON.stringify({ message: "A lead magnet was already generated in the last 48 hours." }),
+                {
+                  status: 200,
+                  headers: { "Content-Type": "application/json" },
+                }
+              );
             } else {
                 // Update or insert the lead magnet timestamp
                 const now = new Date();
@@ -77,10 +88,14 @@ export async function POST(req) {
     }
 
     if (!formData.companyName || !formData.itGoals) {
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
+      return new Response(
+        JSON.stringify({ error: "Missing required fields" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
       );
+      
     }
 
     const prompt = `
@@ -261,13 +276,19 @@ Example output should look like this:
           html: `<p>Click below to view your IT Roadmap (link will expire in 24 hours): </p><a href="${pdfUrl}" target="_blank">Download your IT Roadmap</a>`,
         });
 
-    return NextResponse.json({ roadmap: pdfUrl }, { status: 200 });
+        return new Response(JSON.stringify({ roadmap: pdfUrl }), { status: 200, headers: { "Content-Type": "application/json" } });
   } catch (error) { 
     console.log(error)
-    return NextResponse.json(
-      { error: "Error generating roadmap" },
-      { reason: error.message, statusText: "Internal Server Error" },
-      { status: 500 }
+    return new Response(
+      JSON.stringify({
+        error: "Error generating roadmap",
+        reason: error.message,
+        statusText: "Internal Server Error",
+      }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
     );
   }
 }
